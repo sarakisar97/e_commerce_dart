@@ -1,5 +1,5 @@
-import 'user.dart';
-import 'product.dart';
+import 'models/user.dart';
+import 'models/product.dart';
 import 'dart:io';
 
 void main(List<String> args) {
@@ -23,7 +23,7 @@ void main(List<String> args) {
             print('$i ${users[i].username}');
         }
 
-        int? currentUserindex = int.parse(stdin.readLineSync() ?? '');
+        int? currentUserindex = int.parse(stdin.readLineSync() ?? '-1');
 
         User currentUser = users[currentUserindex];
         
@@ -32,22 +32,22 @@ void main(List<String> args) {
         String? currentPassword = stdin.readLineSync();
 
         if(currentPassword == currentUser.password){
-            buyAProduct(currentUser, products);
+            _buyAProduct(currentUser, products);
         }
         else{
             print("password is wrong");
             stdout.done;
-        }
+        } 
 }
 
-void buyAProduct(User currentUser, List<Product> products){
+void _buyAProduct(User currentUser, List<Product> products){
         print("Select product number please:");
 
             for(int i = 0; i < products.length; i++){
                 print('$i ${products[i].name}');
             }
 
-            int currentProductindex = int.parse(stdin.readLineSync() ?? '');
+            int currentProductindex = int.parse(stdin.readLineSync() ?? '-1');
 
             Product selectedProduct = products[currentProductindex];
 
@@ -57,7 +57,7 @@ void buyAProduct(User currentUser, List<Product> products){
 
             print("Enter product quantity please:");
 
-            double productQuantity = double.parse(stdin.readLineSync() ?? '');
+            int productQuantity = int.parse(stdin.readLineSync() ?? '0');
 
             double totalPrice = productQuantity * selectedProduct.price;
 
@@ -67,10 +67,10 @@ void buyAProduct(User currentUser, List<Product> products){
                 print("Press 0 to buy a new product:");
                 print("Press 1 to close:");
 
-                int number = int.parse(stdin.readLineSync() ?? '');
+                int number = int.parse(stdin.readLineSync() ?? '-1');
 
                 if(number == 0){
-                    buyAProduct(currentUser, products);
+                    _buyAProduct(currentUser, products);
                 }
                 else{
                     stdout.done;
