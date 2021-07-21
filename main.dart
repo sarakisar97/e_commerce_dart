@@ -16,6 +16,8 @@ List<Product> _products = [
       new Product("Shampoo", 400, 60),
   ];
 
+
+
 void main(List<String> args) {
         print("Select username number please:");
 
@@ -40,6 +42,8 @@ void main(List<String> args) {
         } 
 }
 
+
+
 void _buyAProduct(User currentUser, List<Product> products){
         print("Select product number please:");
 
@@ -51,9 +55,7 @@ void _buyAProduct(User currentUser, List<Product> products){
 
             Product selectedProduct = products[currentProductindex];
 
-            print("Product name: " + selectedProduct.name);
-            print("Product price: " + selectedProduct.price.toString());
-            print("Product quantity: " + selectedProduct.quantity.toString());
+            selectedProduct.printProductDetails();
 
             print("Enter product quantity please:");
 

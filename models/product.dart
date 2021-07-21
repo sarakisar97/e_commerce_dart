@@ -16,4 +16,10 @@ class Product{
   int get quantity => this._quantity;
   
   set quantity(value) => this._quantity = value;
+
+  void printProductDetails(){
+    print("Product name: " + _name);
+    print("Product price: " + _price.toString());
+    print("Product quantity: " + _quantity.toString());
+  }
 }
