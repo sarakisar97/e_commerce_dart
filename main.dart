@@ -2,37 +2,37 @@ import 'models/user.dart';
 import 'models/product.dart';
 import 'dart:io';
 
-void main(List<String> args) {
-  List<User> users = [
+List<User> _users = [
             User("Khalid", "P@ssw0rd1", 100), 
             User("Ahmad", "P@ssw0rd2", 500),
             User("Samer", "P@ssw0rd3", 700),
             User("Moute3", "P@ssw0rd4", 1000),
   ];
 
-  List<Product> products = [
+List<Product> _products = [
       new Product("Soup", 100, 40),
       new Product("Washing liquid", 200, 50),
       new Product("Cleaninig detergent", 150, 12),
       new Product("Shampoo", 400, 60),
   ];
-  
+
+void main(List<String> args) {
         print("Select username number please:");
 
-        for(int i = 0; i < users.length; i++){
-            print('$i ${users[i].username}');
+        for(int i = 0; i < _users.length; i++){
+            print('$i ${_users[i].username}');
         }
 
         int? currentUserindex = int.parse(stdin.readLineSync() ?? '-1');
 
-        User currentUser = users[currentUserindex];
+        User currentUser = _users[currentUserindex];
         
         print("Enter password please:");
 
         String? currentPassword = stdin.readLineSync();
 
         if(currentPassword == currentUser.password){
-            _buyAProduct(currentUser, products);
+            _buyAProduct(currentUser, _products);
         }
         else{
             print("password is wrong");
