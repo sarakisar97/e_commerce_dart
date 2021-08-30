@@ -3,17 +3,17 @@ import 'models/product.dart';
 import 'dart:io';
 
 List<User> _users = [
-            User("Khalid", "P@ssw0rd1", 100), 
-            User("Ahmad", "P@ssw0rd2", 500),
-            User("Samer", "P@ssw0rd3", 700),
-            User("Moute3", "P@ssw0rd4", 1000),
+      User("Khalid", "P@ssw0rd1", 100), 
+      User("Ahmad", "P@ssw0rd2", 500),
+      User("Samer", "P@ssw0rd3", 700),
+      User("Moute3", "P@ssw0rd4", 1000),
   ];
 
 List<Product> _products = [
-      new Product("Soup", 100, 40),
-      new Product("Washing liquid", 200, 50),
-      new Product("Cleaninig detergent", 150, 12),
-      new Product("Shampoo", 400, 60),
+      Product("Soup", 100, 40),
+      Product("Washing liquid", 200, 50),
+      Product("Cleaninig detergent", 150, 12),
+      Product("Shampoo", 400, 60),
   ];
 
 
